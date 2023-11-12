@@ -48,9 +48,18 @@ export default function Home() {
         <div className="col-md-2" style={{ "background-color": "#12142f" }}>
           <NavBar country={selectedCountry} range={range} />
         </div>
-        <div className="col-md-1 vl"></div>
-        <div className="col-md-8 main-container">
-          <div className="row">
+        <div
+          className="col-md-1 vl"
+          style={{ "background-color": "#c3c6f8fc" }}
+        ></div>
+        <div
+          className="col-md-8 main-container"
+          style={{ "background-color": "#c3c6f8fc" }}
+        >
+          <div
+            className="row"
+            style={{ "background-color": "#c3c6f8fc", margin: "None" }}
+          >
             <div className="col-md-9">
               <div className="row">
                 <div className="col-md-3"></div>
@@ -59,16 +68,17 @@ export default function Home() {
                 <br />
                 <br />
                 <Slider
+                  size="small"
                   getAriaLabel={() => "Temperature range"}
                   value={range}
                   onChange={rangeChange}
                   min={1960}
                   max={2020}
+                  marks
                   valueLabelDisplay="auto"
-
-                  //   getAriaValueText={valuetext}
+                  color="secondary"
                 />
-                <p>
+                <p style={{ fontFamily: "Noto Serif" }}>
                   Year: <span id="demo">{`${range[0]}-${range[1]}`}</span>
                 </p>
               </div>

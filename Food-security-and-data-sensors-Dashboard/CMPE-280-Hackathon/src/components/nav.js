@@ -97,59 +97,67 @@ const NavBar = (props) => {
     <div>
       <div className="Macro">
         <div className="nav-main-elements">
-          <Link to="/home">
-            <h6>Macroeconomic (USD)</h6>
+          <Link className="link" to="/home">
+            <h6 onClick={() => toggleContent("macro")}>Macroeconomic (USD)</h6>
           </Link>
-          <DndProvider backend={HTML5Backend}>
-            <div className="pets">
-              {macroeconomic.map((mc) => (
-                <MenuCard
-                  draggable
-                  id={mc.id}
-                  name={mc.name}
-                  chart={mc.chart}
-                />
-              ))}
-            </div>
-          </DndProvider>
+          <div id="macro" style={{ display: "none" }}>
+            <DndProvider backend={HTML5Backend}>
+              <div className="pets">
+                {macroeconomic.map((mc) => (
+                  <MenuCard
+                    draggable
+                    id={mc.id}
+                    name={mc.name}
+                    chart={mc.chart}
+                  />
+                ))}
+              </div>
+            </DndProvider>
+          </div>
         </div>
 
         <div className="nav-main-elements">
-          <Link to="/home">
-            <h6>Agricultural</h6>
+          <Link className="link" to="/home">
+            <h6 onClick={() => toggleContent("agri")}>Agricultural</h6>
           </Link>
-          <DndProvider backend={HTML5Backend}>
-            <div className="pets">
-              {agricultural.map((ag) => (
-                <MenuCard
-                  draggable
-                  id={ag.id}
-                  name={ag.name}
-                  chart={ag.chart}
-                />
-              ))}
-            </div>
-          </DndProvider>
+          <div id="agri" style={{ display: "none" }}>
+            <DndProvider backend={HTML5Backend}>
+              <div className="pets">
+                {agricultural.map((ag) => (
+                  <MenuCard
+                    draggable
+                    id={ag.id}
+                    name={ag.name}
+                    chart={ag.chart}
+                  />
+                ))}
+              </div>
+            </DndProvider>
+          </div>
         </div>
         <div className="nav-main-elements">
-          <Link to="/home">
-            <h6>Debt</h6>
+          <Link className="link" to="/home">
+            <h6 onClick={() => toggleContent("debt")}>Debt</h6>
           </Link>
-          <DndProvider backend={HTML5Backend}>
-            <div className="pets">
-              {debt.map((db) => (
-                <MenuCard
-                  draggable
-                  id={db.id}
-                  name={db.name}
-                  chart={db.chart}
-                />
-              ))}
-            </div>
-          </DndProvider>
+          <div id="debt" style={{ display: "none" }}>
+            <DndProvider backend={HTML5Backend}>
+              <div className="pets">
+                {debt.map((db) => (
+                  <MenuCard
+                    draggable
+                    id={db.id}
+                    name={db.name}
+                    chart={db.chart}
+                  />
+                ))}
+              </div>
+            </DndProvider>
+          </div>
         </div>
         <div className="nav-main-elements">
-          <Link to="/imports">Imports</Link>
+          <Link className="link" to="/imports">
+            Imports
+          </Link>
         </div>
         {/* <div className="nav-main-elements">
           <Link to="/yield">Yield</Link>
@@ -169,6 +177,15 @@ const NavBar = (props) => {
       </div>
     </div>
   );
+};
+
+const toggleContent = (id) => {
+  const content = document.getElementById(id);
+  if (content.style.display === "none") {
+    content.style.display = "block";
+  } else {
+    content.style.display = "none";
+  }
 };
 
 export default NavBar;

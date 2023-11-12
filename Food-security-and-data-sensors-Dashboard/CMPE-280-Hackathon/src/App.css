@@ -15,6 +15,37 @@
      color: white;
 }
 
+.link{
+    text-decoration: none;
+    font-weight: 500;
+    color: aliceblue;
+    &:hover{
+        color: #875ce3;
+    }
+}
+
+.pets{
+    cursor: grab;
+    /* &:hover{
+        cursor: grab;
+    }
+    &:hover:active {
+        cursor: grabbing;
+    } */
+}
+.pets:active {
+    cursor: grabbing;
+}
+
+.pet-card {
+    font-family: 'Noto Serif', serif;
+}
+
+.bg-styling {
+    background-color: #c3c6f8fc;
+    /* color: white; */
+}
+
 .vl {
     border-left: 2px solid black;
 }
@@ -41,7 +72,7 @@
 }
 
 .slider-container{
-    display: flex;
+    /* display: flex; */
 }
 
 .slider-name{
@@ -51,6 +82,7 @@
 
 .slider{
     margin-left: 20px;
+    color: #12142f;
 }
 
 .btn-container{
